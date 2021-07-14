@@ -1,0 +1,14 @@
+project(SummerClass)
+
+include_directories(
+    D:/dev/eigen-3.3.9/
+)
+
+# 查找CGAL库
+find_package(CGAL)
+
+aux_source_directory("src/" SRCFILES)  #搜索指定目录下的所有.cpp文件
+file(GLOB HEADFILES "include/*.hpp")
+
+add_executable(SummerClass ${SRCFILES} ${HEADFILES})
+target_link_libraries(SummerClass CGAL::CGAL)
